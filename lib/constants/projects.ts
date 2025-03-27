@@ -30,9 +30,9 @@ export const projects = [
     category: "Fullstack",
     description:
       "A mental health tracker allowing users to track and visualize their feelings over time, journal, set reminders, etc. Also includes a notification system implemented with Twilio and an AI Chatbot implemented with Vercel's AI SDK.",
-    image: "/file.svg",
+    image: "/lightmind.png",
     github: "https://github.com/dallasfoley/LightMind",
-    demo: "#",
+    demo: "https://lightmind.it.com",
     stack: [
       SiTypescript,
       SiNextdotjs,
@@ -66,7 +66,7 @@ export const projects = [
     category: "Frontend-Centric",
     description: "An exercise in UI builing",
     image: "/portfolio.png",
-    github: "#",
+    github: "https://github.com/dallasfoley/dallas",
     demo: "#",
     stack: [
       SiTypescript,
@@ -116,7 +116,24 @@ export const projects = [
     title: "To-Do App",
     category: "Devops-Centric",
     description:
-      "A simple To-Do application deployed with Docker and NGINX on a DigitalOcean Droplet.",
+      "A simple To-Do application deployed with Docker and NGINX on AWS EC2.",
+    image: "/todo.png",
+    github: "#",
+    demo: "#",
+    stack: [
+      SiTypescript,
+      SiNextdotjs,
+      SiTailwindcss,
+      SiDocker,
+      SiNginx,
+      SiDigitalocean,
+    ],
+  },
+  {
+    title: "To-Do App",
+    category: "Devops-Centric",
+    description:
+      "The same To-Do application deployed through AWS Lambda functions.",
     image: "/todo.png",
     github: "#",
     demo: "#",
