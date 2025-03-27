@@ -2,26 +2,28 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Application, SPEObject } from "@splinetool/runtime";
-import dynamic from "next/dynamic";
+//import dynamic from "next/dynamic";
 import { TECH_KEYS, type TechKey } from "@/lib/constants/keys";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React from "react";
+const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
 // Register GSAP ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 // Import Spline with no SSR to avoid hydration issues
-const Spline = dynamic(() => import("@splinetool/react-spline"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-[300px] flex items-center justify-center">
-      <div className="bg-black/80 text-white px-4 py-2 rounded-lg">
-        Loading 3D keyboard...
-      </div>
-    </div>
-  ),
-});
+// const Spline = dynamic(() => import("@splinetool/react-spline"), {
+//   ssr: false,
+//   loading: () => (
+//     <div className="w-full h-[300px] flex items-center justify-center">
+//       <div className="bg-black/80 text-white px-4 py-2 rounded-lg">
+//         Loading 3D keyboard...
+//       </div>
+//     </div>
+//   ),
+// });
 
 const Keyboard = () => {
   const [splineApp, setSplineApp] = useState<Application | null>(null);
