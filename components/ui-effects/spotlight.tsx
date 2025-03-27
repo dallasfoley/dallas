@@ -3,13 +3,20 @@
 import { useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
+import { ReactNode } from "react";
+
 export default function Spotlight({
   children,
   className = "",
   size = 600,
   color = "rgba(138, 43, 226, 0.15)",
+}: {
+  children: ReactNode;
+  className?: string;
+  size?: number;
+  color?: string;
 }) {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const mouseX = useRef(0);
   const mouseY = useRef(0);
 
@@ -17,7 +24,7 @@ export default function Spotlight({
     const container = containerRef.current;
     if (!container) return;
 
-    const handleMouseMove = (event) => {
+    const handleMouseMove = (event: MouseEvent) => {
       const rect = container.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
@@ -40,10 +47,12 @@ export default function Spotlight({
     <div
       ref={containerRef}
       className={cn("relative overflow-hidden", className)}
-      style={{
-        "--spotlight-size": `${size}px`,
-        "--spotlight-color": color,
-      }}
+      style={
+        {
+          "--spotlight-size": `${size}px`,
+          "--spotlight-color": color,
+        } as React.CSSProperties
+      }
     >
       <div
         className="pointer-events-none absolute inset-0 z-10"

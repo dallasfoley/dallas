@@ -1,20 +1,42 @@
 "use client";
 
+import React from "react";
 import { useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
-export default function MovingBorder({
+type AsProps<C extends React.ElementType> = {
+  as?: C;
+};
+
+type PropsWithAs<C extends React.ElementType, P = object> = AsProps<C> &
+  Omit<React.ComponentPropsWithoutRef<C>, keyof AsProps<C>> &
+  P;
+
+export interface MovingBorderOwnProps {
+  children?: React.ReactNode;
+  duration?: number;
+  className?: string;
+  containerClassName?: string;
+  borderRadius?: string;
+  colors?: string[];
+}
+
+export type MovingBorderProps<C extends React.ElementType = "div"> =
+  PropsWithAs<C, MovingBorderOwnProps>;
+
+export default function MovingBorder<C extends React.ElementType = "div">({
+  as,
   children,
   duration = 2000,
   className,
   containerClassName,
   borderRadius = "1rem",
   colors = ["rgba(138, 43, 226, 0.8)", "rgba(75, 0, 130, 0.8)"],
-  as: Component = "div",
   ...otherProps
-}) {
-  const containerRef = useRef(null);
-  const canvasRef = useRef(null);
+}: MovingBorderProps<C>) {
+  const Component = as || "div";
+  const containerRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const renderedRef = useRef(false);
 
   useEffect(() => {
@@ -41,8 +63,8 @@ export default function MovingBorder({
 
     resizeObserver.observe(container);
 
-    let animationFrame;
-    let startTime;
+    let animationFrame: number | undefined;
+    let startTime: number;
 
     function startAnimation() {
       if (animationFrame) {
@@ -57,10 +79,12 @@ export default function MovingBorder({
       const elapsed = currentTime - startTime;
       const progress = (elapsed % duration) / duration;
 
+      if (!canvas) return;
       const width = canvas.width;
       const height = canvas.height;
 
       // Clear canvas
+      if (!ctx) return;
       ctx.clearRect(0, 0, width, height);
 
       // Create gradient
@@ -113,24 +137,25 @@ export default function MovingBorder({
     };
   }, [borderRadius, colors, duration]);
 
+  // Separate the props we want to pass to the Component
+  const componentProps = {
+    className: cn(
+      "relative w-full h-full bg-black rounded-[calc(1rem-2px)]",
+      className
+    ),
+    ...otherProps,
+  };
+
   return (
-    <Component
+    <div
       ref={containerRef}
       className={cn("relative p-[4px] group", containerClassName)}
-      {...otherProps}
     >
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full pointer-events-none"
       />
-      <div
-        className={cn(
-          "relative w-full h-full bg-black rounded-[calc(1rem-2px)]",
-          className
-        )}
-      >
-        {children}
-      </div>
-    </Component>
+      {React.createElement(Component, componentProps, children)}
+    </div>
   );
 }

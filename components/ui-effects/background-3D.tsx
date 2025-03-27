@@ -2,10 +2,19 @@
 
 import { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
+import * as THREE from "three";
 
 // Cube component with wireframe material
-function WireframeCube({ position, rotation, scale = 1 }) {
-  const meshRef = useRef();
+function WireframeCube({
+  position,
+  rotation,
+  scale = 1,
+}: {
+  position: [number, number, number];
+  rotation: [number, number, number];
+  scale?: number;
+}) {
+  const meshRef = useRef<THREE.Mesh>(null);
   const [randomRotation] = useState(() => [
     Math.random() * 0.01 - 0.005,
     Math.random() * 0.01 - 0.005,
@@ -34,8 +43,16 @@ function WireframeCube({ position, rotation, scale = 1 }) {
 }
 
 // Pyramid component with wireframe material
-function WireframePyramid({ position, rotation, scale = 1 }) {
-  const meshRef = useRef(null);
+function WireframePyramid({
+  position,
+  rotation,
+  scale = 1,
+}: {
+  position: [number, number, number];
+  rotation: [number, number, number];
+  scale?: number;
+}) {
+  const meshRef = useRef<THREE.Mesh>(null);
   const [randomRotation] = useState(() => [
     Math.random() * 0.01 - 0.005,
     Math.random() * 0.01 - 0.005,
@@ -66,7 +83,11 @@ function WireframePyramid({ position, rotation, scale = 1 }) {
 // Scene component with all the shapes
 function Scene() {
   // Generate positions for small cubes
-  const smallCubes = [];
+  const smallCubes: {
+    position: [number, number, number];
+    rotation: [number, number, number];
+    scale: number;
+  }[] = [];
   for (let i = 0; i < 20; i++) {
     smallCubes.push({
       position: [

@@ -1,16 +1,26 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { JSX, useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
+import React from "react"; // Import React
+
+interface TextRevealProps {
+  text?: string;
+  className?: string;
+  once?: boolean;
+  delay?: number;
+  duration?: number;
+  as?: keyof JSX.IntrinsicElements;
+}
 
 export default function TextReveal({
-  text,
+  text = "",
   className = "",
   once = true,
   delay = 0,
   duration = 0.05,
   as: Component = "h2",
-}) {
+}: TextRevealProps) {
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once });
@@ -25,8 +35,10 @@ export default function TextReveal({
     }
   }, [controls, isInView]);
 
-  return (
-    <Component className={className}>
+  return React.createElement(
+    Component,
+    { className: className },
+    <React.Fragment>
       <span className="sr-only">{text}</span>
       <motion.span
         ref={ref}
@@ -74,6 +86,6 @@ export default function TextReveal({
           </span>
         ))}
       </motion.span>
-    </Component>
+    </React.Fragment>
   );
 }

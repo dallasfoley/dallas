@@ -5,6 +5,11 @@ import type { Application, SPEObject } from "@splinetool/runtime";
 import dynamic from "next/dynamic";
 import { TECH_KEYS, type TechKey } from "@/lib/constants/keys";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register GSAP ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
 // Import Spline with no SSR to avoid hydration issues
 const Spline = dynamic(() => import("@splinetool/react-spline"), {
@@ -45,12 +50,45 @@ const Keyboard = () => {
       // Apply appropriate scaling based on device size
       applyResponsiveScaling(keyboard);
 
+      // Set up barrel roll animation
+      setupBarrelRollAnimation(keyboard);
+
       // Also adjust camera position for better framing
       const camera = app.findObjectByName("Camera");
       if (camera) {
         adjustCameraForDevice(camera);
       }
     }
+  };
+
+  // Function to set up barrel roll animation
+  const setupBarrelRollAnimation = (keyboard: SPEObject) => {
+    if (!containerRef.current) return;
+
+    // Store the initial rotation
+    const initialRotation = {
+      x: keyboard.rotation.x,
+      y: keyboard.rotation.y,
+      z: keyboard.rotation.z,
+    };
+
+    // Create a GSAP timeline with ScrollTrigger
+    ScrollTrigger.create({
+      trigger: containerRef.current,
+      start: "top 50%",
+      onEnter: () => {
+        // Perform a barrel roll that returns to the original orientation
+        gsap.to(keyboard.rotation, {
+          x: initialRotation.x + Math.PI * 2, // Full barrel roll around x-axis
+          y: initialRotation.y, // Maintain original y rotation
+          z: initialRotation.z, // Maintain original z rotation
+          duration: 1.5,
+          ease: "power2.out",
+        });
+      },
+      // Ensure the animation only triggers once
+      once: true,
+    });
   };
 
   // Function to apply responsive scaling
@@ -92,13 +130,6 @@ const Keyboard = () => {
       }
     }
   };
-
-  // Update scaling when screen size changes
-  useEffect(() => {
-    if (keyboardRef.current) {
-      applyResponsiveScaling(keyboardRef.current);
-    }
-  }, [isMobile, isSmallMobile]);
 
   // Set up event listeners for keyboard interactions
   useEffect(() => {

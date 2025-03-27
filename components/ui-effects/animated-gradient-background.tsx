@@ -3,12 +3,14 @@
 import { useEffect, useRef } from "react";
 
 export default function AnimatedGradientBackground() {
-  const canvasRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
     const ctx = canvas.getContext("2d");
-    let animationFrameId;
+    if (!ctx) return;
+    let animationFrameId: number;
 
     // Set canvas dimensions
     const setCanvasDimensions = () => {
