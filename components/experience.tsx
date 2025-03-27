@@ -81,16 +81,18 @@ export default function Experience() {
         "Collaborated with a team developing scalable backend systems and RESTful APIs using Java Spring Boot. Gained hands-on experience in designing database schemas, implementing business logic and optimizing API performance.",
     },
     {
-      title: "Overnight Stocking Associate",
-      company: "Walmart",
-      period: "Feb. 2025 - Present",
-      description: "",
+      title: "SAT/ACT Prep Tutor",
+      company: "Michigan State University",
+      period: "Sept. 2024 - Dec. 2024",
+      description:
+        "Guided students in mastering ACT/SAT content, providing tailored strategies for improving test performance. Identified and addressed individual learning gaps to achieve measurable score improvements.",
     },
     {
       title: "Undergraduate Teaching Assistant",
       company: "Michigan State University",
       period: "Aug. 2023 - Dec. 2023",
-      description: "",
+      description:
+        "Led recitation to over 70 students weekly, provided personalized tutoring and administered and graded assessments helping to enhance students’ understanding of mathematical concepts and theories.",
     },
   ];
 
@@ -105,7 +107,7 @@ export default function Experience() {
       degree: "Diploma",
       institution: "Novi High School",
       period: "2015 - 2019",
-      description: "",
+      description: "Attended the greatest public high school of all time.",
     },
   ];
 
