@@ -4,23 +4,46 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { TypewriterEffectSmooth } from "./ui-effects/typewriter-effect";
-
-const words = [
-  {
-    text: "Hi, ",
-    className: "text-zinc-200 text-3xl md:text-5xl",
-  },
-  {
-    text: "I'm ",
-    className: "text-zinc-200 text-3xl md:text-5xl",
-  },
-  {
-    text: "Dallas.",
-    className: "text-blue-600 text-3xl md:text-5xl",
-  },
-];
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 export default function Hero() {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isSmallMobile = useMediaQuery("(max-width: 480px)");
+
+  let words;
+
+  if (isMobile || isSmallMobile) {
+    words = [
+      {
+        text: "Hi, ",
+        className: "text-zinc-200 text-3xl md:text-5xl",
+      },
+      {
+        text: "I'm ",
+        className: "text-zinc-200 text-3xl md:text-5xl",
+      },
+      {
+        text: "Dallas.",
+        className: "text-blue-600 text-3xl md:text-5xl",
+      },
+    ];
+  } else {
+    words = [
+      {
+        text: "Hi,",
+        className: "text-zinc-200 text-3xl md:text-5xl",
+      },
+      {
+        text: "I'm",
+        className: "text-zinc-200 text-3xl md:text-5xl",
+      },
+      {
+        text: "Dallas.",
+        className: "text-blue-600 text-3xl md:text-5xl",
+      },
+    ];
+  }
+
   return (
     <div className="relative isolate overflow-hidden bg-transparent">
       <div className="mx-auto max-w-7xl px-6 py-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
