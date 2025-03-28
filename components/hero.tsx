@@ -7,11 +7,11 @@ import { TypewriterEffectSmooth } from "./ui-effects/typewriter-effect";
 
 const words = [
   {
-    text: "Hi,",
+    text: "Hi, ",
     className: "text-zinc-200 text-3xl md:text-5xl",
   },
   {
-    text: "I'm",
+    text: "I'm ",
     className: "text-zinc-200 text-3xl md:text-5xl",
   },
   {

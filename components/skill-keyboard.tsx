@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { Application, SPEObject } from "@splinetool/runtime";
 //import dynamic from "next/dynamic";
 import { TECH_KEYS, type TechKey } from "@/lib/constants/keys";
@@ -94,28 +94,45 @@ const Keyboard = () => {
   };
 
   // Function to apply responsive scaling
-  const applyResponsiveScaling = (keyboard: SPEObject) => {
-    if (isSmallMobile) {
-      // Extra small devices
-      keyboard.scale.x = 0.08;
-      keyboard.scale.y = 0.08;
-      keyboard.scale.z = 0.08;
-      // Center it better
-      keyboard.position.y = 0.5;
-    } else if (isMobile) {
-      // Mobile devices
-      keyboard.scale.x = 0.15;
-      keyboard.scale.y = 0.15;
-      keyboard.scale.z = 0.15;
-      // Slight position adjustment
-      keyboard.position.y = 0.3;
-    } else {
-      // Desktop/tablet
-      keyboard.scale.x = 0.2;
-      keyboard.scale.y = 0.2;
-      keyboard.scale.z = 0.2;
-    }
-  };
+  const applyResponsiveScaling = useCallback(
+    (keyboard: SPEObject) => {
+      console.log(
+        "Applying scaling - isMobile:",
+        isMobile,
+        "isSmallMobile:",
+        isSmallMobile
+      );
+
+      if (isSmallMobile) {
+        // Extra small devices
+        console.log("Applying small mobile scaling (0.08)");
+        keyboard.scale.x = 0.08;
+        keyboard.scale.y = 0.08;
+        keyboard.scale.z = 0.08;
+        // Center it better
+        keyboard.position.y = 0.5;
+      } else if (isMobile) {
+        keyboard.scale.x = 0.15;
+        keyboard.scale.y = 0.15;
+        keyboard.scale.z = 0.15;
+        console.log("Applying mobile scaling (0.15)");
+        keyboard.scale.x = 0.15;
+        keyboard.scale.y = 0.15;
+        keyboard.scale.z = 0.15;
+        // Slight position adjustment
+        keyboard.scale.x = 0.2;
+        keyboard.scale.y = 0.2;
+        keyboard.scale.z = 0.2;
+      } else {
+        // Desktop/tablet
+        console.log("Applying desktop scaling (0.2)");
+        keyboard.scale.x = 0.2;
+        keyboard.scale.y = 0.2;
+        keyboard.scale.z = 0.2;
+      }
+    },
+    [isMobile, isSmallMobile]
+  );
 
   // Function to adjust camera for different devices
   const adjustCameraForDevice = (camera: SPEObject) => {
@@ -178,6 +195,14 @@ const Keyboard = () => {
       }
     };
   }, [splineApp]);
+
+  // Re-apply scaling when media query changes
+  useEffect(() => {
+    if (splineApp && keyboardRef.current) {
+      console.log("Media query changed, reapplying scaling");
+      applyResponsiveScaling(keyboardRef.current);
+    }
+  }, [isMobile, isSmallMobile, splineApp, applyResponsiveScaling]);
 
   return (
     <div

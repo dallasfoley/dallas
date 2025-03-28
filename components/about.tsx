@@ -91,11 +91,12 @@ export default function About() {
             appealing and responsive designs and have been learning some 3D
             libraries as well -- particularly Three.js and Spline. <br />
             <br />
-            On the backend, I enjoy working with Next.js&apos;s server
-            components, server actions and API routes as well as Node.js and
-            Express.js for building efficient and versatile APIs. I&apos;m also
-            comfortable working with and enjoy Java and the Spring Boot
-            ecosystem for their scalability and robustness. <br />
+            On the backend, I enjoy working with Node.js and Express.js as well
+            as Next.js&apos;s server components, server actions and API routes
+            for building efficient and versatile APIs. I&apos;m also comfortable
+            working with and enjoy Java and the Spring Boot ecosystem &#8212;
+            particularly for enterprise-level applications &#8212; for their
+            scalability and robustness. <br />
             <br />
             When it comes to databases, I&apos;m experienced with both
             relational databases like PostgreSQL and MySQL and non-relational
@@ -108,8 +109,8 @@ export default function About() {
             continuous integration and delivery. While I appreciate the ease of
             deploying to Vercel, I&apos;m also curious about all it does under
             the hood and enjoy digging into the complexities of deploying web
-            apps to VPSs (through DigitalOcean or AWS) or AWS&apos;s Lambda
-            functions directly which Vercel spins up under the hood.
+            apps to VMs and VPSs (through DigitalOcean or AWS) or AWS&apos;s
+            Lambda functions directly which Vercel spins up under the hood.
             <br />
             <br /> While those are the technologies I&apos;ve explored and am
             most comfortable with, I&apos;m willing to learn whichever
