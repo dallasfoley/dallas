@@ -148,10 +148,11 @@ export const projects = [
     title: "To-Do App",
     category: "Devops-Centric",
     description:
-      "A simple To-Do application deployed with Docker and NGINX on a DigitalOcean droplet.",
-    image: "/todo.png",
-    github: "#",
-    demo: "#",
+      "The same DIY auth app from the backend tab deployed with Docker and NGINX on a DigitalOcean droplet.",
+    image: "/auth.png",
+    github:
+      "https://github.com/users/dallasfoley/packages/container/package/auth",
+    demo: "https://auth135.twilightparadox.com/login",
     stack: [
       SiTypescript,
       SiNextdotjs,
