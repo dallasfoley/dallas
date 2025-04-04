@@ -115,8 +115,12 @@ export default function Flow() {
         nodes={nodes}
         edges={edges}
         nodeTypes={nodeTypes}
-        zoomOnScroll={false}
+        elementsSelectable={false}
         nodesDraggable={false}
+        nodesConnectable={false}
+        panOnDrag={false}
+        zoomOnScroll={false}
+        zoomOnDoubleClick={false}
         fitView
         fitViewOptions={{ padding: 0.1 }}
         preventScrolling={false}

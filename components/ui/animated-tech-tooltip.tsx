@@ -37,6 +37,7 @@ const techNameMap: Record<string, string> = {
   SiNumpy: "NumPy",
   SiAwslambda: "AWS Lambda",
   SiReacthookform: "React-Hook-Form",
+  FaAws: "AWS EC2",
 };
 
 interface AnimatedTechTooltipProps {

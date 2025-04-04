@@ -29,6 +29,7 @@ import {
   SiXml,
   SiZod,
 } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 
 export const projects = [
   {
@@ -126,7 +127,7 @@ export const projects = [
     ],
   },
   {
-    title: "Auth",
+    title: "DIY Auth",
     category: "Backend-Centric",
     description:
       "A simple sign-in and sign-out using 0 auth libraries and only utilizing bcrypt's hashing algorithm.",
@@ -145,10 +146,10 @@ export const projects = [
     stack: [SiTypescript, SiCss3, SiReact, SiVercel],
   },
   {
-    title: "To-Do App",
+    title: "Auth",
     category: "Devops-Centric",
     description:
-      "The same DIY auth app from the backend tab deployed with Docker and NGINX on a DigitalOcean droplet.",
+      "The same DIY auth app from the backend tab deployed with Docker, NGINX and the Github Container Repository on a DigitalOcean droplet.",
     image: "/auth.png",
     github:
       "https://github.com/users/dallasfoley/packages/container/package/auth",
@@ -163,7 +164,26 @@ export const projects = [
     ],
   },
   {
-    title: "To-Do App",
+    title: "To-Do App (AWS EC2)",
+    category: "Devops-Centric",
+    description:
+      "A simple To-Do application deployed with Docker, NGINX and the Github Container Repository on an AWS EC2 instance.",
+    image: "/todo.png",
+    github:
+      "https://github.com/users/dallasfoley/packages/container/package/todo-app",
+    demo: "https://todo135.twilightparadox.com/",
+    stack: [
+      SiTypescript,
+      SiNextdotjs,
+      SiTailwindcss,
+      SiClerk,
+      SiDocker,
+      SiNginx,
+      FaAws,
+    ],
+  },
+  {
+    title: "To-Do App (AWS Lambda)",
     category: "Devops-Centric",
     description:
       "The same To-Do application deployed through AWS Lambda functions.",
@@ -174,6 +194,7 @@ export const projects = [
       SiTypescript,
       SiNextdotjs,
       SiTailwindcss,
+      SiClerk,
       SiDocker,
       SiNginx,
       SiAwslambda,
