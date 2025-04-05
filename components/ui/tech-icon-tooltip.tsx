@@ -8,7 +8,7 @@ interface TechIconTooltipProps {
   className?: string;
 }
 
-export default function TechIconTooltip2({
+export default function TechIconTooltip({
   Icon,
   className = "",
 }: TechIconTooltipProps) {
