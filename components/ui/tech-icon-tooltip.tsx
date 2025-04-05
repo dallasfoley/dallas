@@ -11,68 +11,18 @@ import {
 } from "framer-motion";
 import type { IconType } from "react-icons/lib";
 
-// Map of icon components to their display names
-const techNameMap = {
-  SiReact: "React.js",
-  SiNextdotjs: "Next.js",
-  SiTypescript: "TypeScript",
-  SiTailwindcss: "Tailwind CSS",
-  SiShadcnui: "Shadcn UI",
-  SiPostgresql: "PostgreSQL",
-  SiPrisma: "Prisma",
-  SiDrizzle: "Drizzle ORM",
-  SiZod: "Zod",
-  SiReactquery: "React Query",
-  SiNodedotjs: "Node.js",
-  SiExpress: "Express",
-  SiCss3: "CSS3",
-  SiThreedotjs: "Three.js",
-  SiDocker: "Docker",
-  SiNginx: "NGINX",
-  SiDigitalocean: "DigitalOcean",
-  SiCplusplus: "C++",
-  SiCmake: "CMake",
-  SiXml: "XML",
-  SiPython: "Python",
-  SiNumpy: "NumPy",
-  SiAwslambda: "AWS Lambda",
-  SiReacthookform: "React-Hook-Form",
-  SiClerk: "Clerk",
-  SiTwilio: "Twilio",
-  SiLinux: "Linux",
-  SiVercel: "Vercel",
-  FaAws: "AWS EC2",
-};
-
 interface TechIconTooltipProps {
   Icon: IconType;
   className?: string;
+  techName: string; // Add explicit techName prop
 }
 
 export default function TechIconTooltip({
   Icon,
   className = "",
+  techName = "Technology", // Default fallback
 }: TechIconTooltipProps) {
   const [isHovered, setIsHovered] = useState(false);
-
-  // Get the tech name using a data attribute
-  const getTechName = () => {
-    // Use a more reliable approach for production
-    // Convert the icon function to a string and extract the name
-    const iconString = Icon.toString();
-
-    // Check each key in our map to see if it appears in the icon string
-    for (const key of Object.keys(techNameMap)) {
-      if (iconString.includes(key)) {
-        return techNameMap[key as keyof typeof techNameMap];
-      }
-    }
-
-    // Fallback
-    return "Technology";
-  };
-
-  const techName = getTechName();
 
   // Animation configuration
   const springConfig = { stiffness: 100, damping: 5 };

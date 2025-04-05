@@ -1,4 +1,4 @@
-import { IconType } from "react-icons/lib";
+import type { IconType } from "react-icons/lib";
 import {
   SiAwslambda,
   SiClerk,
@@ -30,6 +30,13 @@ import {
   SiZod,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
+import { techNameMap } from "./tech-names";
+
+// Helper type for tech stack items
+type TechStackItem = {
+  Icon: IconType;
+  name: string;
+};
 
 export const projects = [
   {
@@ -37,38 +44,37 @@ export const projects = [
     category: "Fullstack",
     description:
       "A mental health tracker allowing users to track and visualize their feelings over time, journal, set reminders, etc.",
-    longDesription:
+    longDescription:
       "A mental health tracker allowing users to track and visualize their feelings over time, journal, set reminders, etc. Also includes a notification system implemented with Twilio and a Linux Cronjob (thorough Vercel) and an AI Chatbot implemented with Vercel's AI SDK.",
-
     image: "/lightmind.png",
     github: "https://github.com/dallasfoley/LightMind",
     demo: "https://lightmind.it.com",
     stack: [
-      SiTypescript,
-      SiNextdotjs,
-      SiReactquery,
-      SiZod,
-      SiTailwindcss,
-      SiShadcnui,
-      SiPostgresql,
-      SiDrizzle,
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
+      { Icon: SiReactquery, name: techNameMap.SiReactquery },
+      { Icon: SiZod, name: techNameMap.SiZod },
+      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
+      { Icon: SiShadcnui, name: techNameMap.SiShadcnui },
+      { Icon: SiPostgresql, name: techNameMap.SiPostgresql },
+      { Icon: SiDrizzle, name: techNameMap.SiDrizzle },
     ],
     fullstack: [
-      SiTypescript,
-      SiReact,
-      SiNextdotjs,
-      SiReactquery,
-      SiZod,
-      SiReacthookform,
-      SiCss3,
-      SiTailwindcss,
-      SiShadcnui,
-      SiPostgresql,
-      SiDrizzle,
-      SiLinux,
-      SiTwilio,
-      SiClerk,
-      SiVercel,
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiReact, name: techNameMap.SiReact },
+      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
+      { Icon: SiReactquery, name: techNameMap.SiReactquery },
+      { Icon: SiZod, name: techNameMap.SiZod },
+      { Icon: SiReacthookform, name: techNameMap.SiReacthookform },
+      { Icon: SiCss3, name: techNameMap.SiCss3 },
+      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
+      { Icon: SiShadcnui, name: techNameMap.SiShadcnui },
+      { Icon: SiPostgresql, name: techNameMap.SiPostgresql },
+      { Icon: SiDrizzle, name: techNameMap.SiDrizzle },
+      { Icon: SiLinux, name: techNameMap.SiLinux },
+      { Icon: SiTwilio, name: techNameMap.SiTwilio },
+      { Icon: SiClerk, name: techNameMap.SiClerk },
+      { Icon: SiVercel, name: techNameMap.SiVercel },
     ],
   },
   {
@@ -81,13 +87,13 @@ export const projects = [
     github: "https://github.com/dallasfoley/recipe-finder",
     demo: "https://recipe-finder-peach.vercel.app/",
     stack: [
-      SiTypescript,
-      SiReact,
-      SiNextdotjs,
-      SiTailwindcss,
-      SiPostgresql,
-      SiPrisma,
-      SiVercel,
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiReact, name: techNameMap.SiReact },
+      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
+      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
+      { Icon: SiPostgresql, name: techNameMap.SiPostgresql },
+      { Icon: SiPrisma, name: techNameMap.SiPrisma },
+      { Icon: SiVercel, name: techNameMap.SiVercel },
     ],
   },
   {
@@ -100,13 +106,13 @@ export const projects = [
     github: "https://github.com/dallasfoley/dallas",
     demo: "#",
     stack: [
-      SiTypescript,
-      SiReact,
-      SiNextdotjs,
-      SiTailwindcss,
-      SiShadcnui,
-      SiThreedotjs,
-      SiVercel,
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiReact, name: techNameMap.SiReact },
+      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
+      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
+      { Icon: SiShadcnui, name: techNameMap.SiShadcnui },
+      { Icon: SiThreedotjs, name: techNameMap.SiThreedotjs },
+      { Icon: SiVercel, name: techNameMap.SiVercel },
     ],
   },
   {
@@ -117,13 +123,13 @@ export const projects = [
     github: "https://github.com/dallasfoley/Pokedol",
     demo: "https://pokedol.vercel.app/",
     stack: [
-      SiTypescript,
-      SiCss3,
-      SiReact,
-      SiNodedotjs,
-      SiExpress,
-      SiPostgresql,
-      SiVercel,
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiCss3, name: techNameMap.SiCss3 },
+      { Icon: SiReact, name: techNameMap.SiReact },
+      { Icon: SiNodedotjs, name: techNameMap.SiNodedotjs },
+      { Icon: SiExpress, name: techNameMap.SiExpress },
+      { Icon: SiPostgresql, name: techNameMap.SiPostgresql },
+      { Icon: SiVercel, name: techNameMap.SiVercel },
     ],
   },
   {
@@ -134,7 +140,13 @@ export const projects = [
     image: "/auth.png",
     github: "https://github.com/dallasfoley/Auth",
     demo: "https://auth-git-master-dallas-foleys-projects.vercel.app/login",
-    stack: [SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiVercel],
+    stack: [
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiReact, name: techNameMap.SiReact },
+      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
+      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
+      { Icon: SiVercel, name: techNameMap.SiVercel },
+    ],
   },
   {
     title: "Calculator",
@@ -143,7 +155,12 @@ export const projects = [
     image: "/calc.png",
     github: "https://github.com/dallasfoley/Calculator",
     demo: "https://calculadora-nine-pi.vercel.app/",
-    stack: [SiTypescript, SiCss3, SiReact, SiVercel],
+    stack: [
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiCss3, name: techNameMap.SiCss3 },
+      { Icon: SiReact, name: techNameMap.SiReact },
+      { Icon: SiVercel, name: techNameMap.SiVercel },
+    ],
   },
   {
     title: "Auth",
@@ -155,12 +172,12 @@ export const projects = [
       "https://github.com/users/dallasfoley/packages/container/package/auth",
     demo: "https://auth135.twilightparadox.com/login",
     stack: [
-      SiTypescript,
-      SiNextdotjs,
-      SiTailwindcss,
-      SiDocker,
-      SiNginx,
-      SiDigitalocean,
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
+      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
+      { Icon: SiDocker, name: techNameMap.SiDocker },
+      { Icon: SiNginx, name: techNameMap.SiNginx },
+      { Icon: SiDigitalocean, name: techNameMap.SiDigitalocean },
     ],
   },
   {
@@ -173,13 +190,13 @@ export const projects = [
       "https://github.com/users/dallasfoley/packages/container/package/todo-app",
     demo: "https://todo135.twilightparadox.com/",
     stack: [
-      SiTypescript,
-      SiNextdotjs,
-      SiTailwindcss,
-      SiClerk,
-      SiDocker,
-      SiNginx,
-      FaAws,
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
+      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
+      { Icon: SiClerk, name: techNameMap.SiClerk },
+      { Icon: SiDocker, name: techNameMap.SiDocker },
+      { Icon: SiNginx, name: techNameMap.SiNginx },
+      { Icon: FaAws, name: techNameMap.FaAws },
     ],
   },
   {
@@ -191,13 +208,13 @@ export const projects = [
     github: "#",
     demo: "#",
     stack: [
-      SiTypescript,
-      SiNextdotjs,
-      SiTailwindcss,
-      SiClerk,
-      SiDocker,
-      SiNginx,
-      SiAwslambda,
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
+      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
+      { Icon: SiClerk, name: techNameMap.SiClerk },
+      { Icon: SiDocker, name: techNameMap.SiDocker },
+      { Icon: SiNginx, name: techNameMap.SiNginx },
+      { Icon: SiAwslambda, name: techNameMap.SiAwslambda },
     ],
   },
   {
@@ -206,7 +223,10 @@ export const projects = [
     description: "An exercise in OOP made with C++, CMake and wxWidgets.",
     image: "/canadian-experience.png",
     github: "https://github.com/dallasfoley/CanadianExperience",
-    stack: [SiCplusplus, SiCmake],
+    stack: [
+      { Icon: SiCplusplus, name: techNameMap.SiCplusplus },
+      { Icon: SiCmake, name: techNameMap.SiCmake },
+    ],
   },
   {
     title: "Action Sudoku",
@@ -215,7 +235,11 @@ export const projects = [
       "An interactive sudoku game with multiple levels, features and themes.",
     image: "/action-sudoku.png",
     github: "https://github.com/dallasfoley/ActionSudokuGame",
-    stack: [SiCplusplus, SiCmake, SiXml],
+    stack: [
+      { Icon: SiCplusplus, name: techNameMap.SiCplusplus },
+      { Icon: SiCmake, name: techNameMap.SiCmake },
+      { Icon: SiXml, name: techNameMap.SiXml },
+    ],
   },
   {
     title: "Graph ADT Implementation",
@@ -224,7 +248,10 @@ export const projects = [
       "A comprehensive implementation of the Graph Abstract Data Type (ADT) using an Adjacency Map structure. Implements multiple shortest path algorithms.",
     image: "/graph.jpg",
     github: "https://github.com/dallasfoley/GraphADTImplementation",
-    stack: [SiPython, SiNumpy],
+    stack: [
+      { Icon: SiPython, name: techNameMap.SiPython },
+      { Icon: SiNumpy, name: techNameMap.SiNumpy },
+    ],
   },
 ];
 
@@ -232,8 +259,10 @@ export type Project = {
   title: string;
   category: string;
   description: string;
+  longDescription?: string;
   image: string;
   github: string;
   demo?: string;
-  stack: IconType[];
+  stack: TechStackItem[];
+  fullstack?: TechStackItem[];
 };

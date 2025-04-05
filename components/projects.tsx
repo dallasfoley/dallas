@@ -1,5 +1,7 @@
 "use client";
 
+import type React from "react";
+
 import { useState, useId, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -177,12 +179,15 @@ export default function Projects() {
                         )}
                       </div>
                       <div className="flex items-center">
-                        {project.stack.map((Tech, key) => (
+                        {project.stack.map((tech, key) => (
                           <div
                             className="mx-1 sm:mx-2 p-0 h-4 w-4 sm:h-5 sm:w-5"
                             key={key}
                           >
-                            <TechIconTooltip Icon={Tech} />
+                            <TechIconTooltip
+                              Icon={tech.Icon}
+                              techName={tech.name}
+                            />
                           </div>
                         ))}
                       </div>
@@ -269,21 +274,40 @@ export default function Projects() {
                   </h4>
                   <div className="flex flex-wrap gap-3">
                     {activeProject.fullstack &&
-                      activeProject.fullstack.map((Tech, key) => (
+                      activeProject.fullstack.map((tech, key) => (
                         <div
                           className="mx-1 sm:mx-2 p-0 h-4 w-4 sm:h-5 sm:w-5"
                           key={key}
                         >
-                          <TechIconTooltip Icon={Tech} />
+                          <TechIconTooltip
+                            Icon={tech.Icon}
+                            techName={tech.name}
+                          />
                         </div>
                       ))}
                     {!activeProject.fullstack &&
-                      activeProject.stack.map((Tech, key) => (
+                      activeProject.stack.map((tech, key) => (
                         <div
                           className="mx-1 sm:mx-2 p-0 h-4 w-4 sm:h-5 sm:w-5"
                           key={key}
                         >
-                          <TechIconTooltip Icon={Tech} />
+                          <TechIconTooltip
+                            Icon={tech.Icon}
+                            techName={tech.name}
+                          />
+                        </div>
+                      ))}
+
+                    {!activeProject.fullstack &&
+                      activeProject.stack.map((tech, key) => (
+                        <div
+                          className="mx-1 sm:mx-2 p-0 h-4 w-4 sm:h-5 sm:w-5"
+                          key={key}
+                        >
+                          <TechIconTooltip
+                            Icon={tech.Icon}
+                            techName={tech.name}
+                          />
                         </div>
                       ))}
                   </div>
@@ -304,23 +328,6 @@ export default function Projects() {
                     </p>
                   </motion.div>
                 }
-
-                {/* {activeProject.features && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="mt-6"
-                  >
-                    <h4 className="text-lg font-semibold text-white mb-2">
-                      Key Features
-                    </h4>
-                    <ul className="list-disc pl-5 text-gray-300 space-y-1">
-                      {activeProject.features.map((feature, index) => (
-                        <li key={index}>{feature}</li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                )} */}
               </div>
             </motion.div>
           </motion.div>
