@@ -37,23 +37,55 @@ const techNameMap: Record<string, string> = {
   SiNumpy: "NumPy",
   SiAwslambda: "AWS Lambda",
   SiReacthookform: "React-Hook-Form",
+  SiClerk: "Clerk",
+  SiTwilio: "Twilio",
+  SiLinux: "Linux",
+  SiVercel: "Vercel",
   FaAws: "AWS EC2",
 };
 
-interface AnimatedTechTooltipProps {
+interface TechIconTooltipProps {
   Icon: IconType;
   className?: string;
 }
 
-export default function AnimatedTechTooltip({
+export default function TechIconTooltip({
   Icon,
   className = "",
-}: AnimatedTechTooltipProps) {
+}: TechIconTooltipProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Extract the name from the icon component's display name or function name
-  const iconName = Icon.name;
-  const techName = techNameMap[iconName] || iconName.replace("Si", "");
+  // Extract the tech name using a more reliable method
+  const getTechName = () => {
+    // Try to get the name from the function's displayName or name
+    const iconDisplayName = Icon.name;
+
+    // Check if we have a direct match in our map
+    if (techNameMap[iconDisplayName]) {
+      return techNameMap[iconDisplayName];
+    }
+
+    // If no direct match, try to find a partial match
+    // This is useful for minified code in production where names might be mangled
+    for (const key of Object.keys(techNameMap)) {
+      if (iconDisplayName.includes(key)) {
+        return techNameMap[key];
+      }
+    }
+
+    // Fallback: check the toString representation for known patterns
+    const iconString = Icon.toString();
+    for (const key of Object.keys(techNameMap)) {
+      if (iconString.includes(key)) {
+        return techNameMap[key];
+      }
+    }
+
+    // Last resort: return a cleaned version of the name or a default
+    return iconDisplayName.replace(/^(Si|Fa)/, "") || "Technology";
+  };
+
+  const techName = getTechName();
 
   // Animation configuration
   const springConfig = { stiffness: 100, damping: 5 };
