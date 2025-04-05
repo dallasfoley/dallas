@@ -12,7 +12,7 @@ import {
 import type { IconType } from "react-icons/lib";
 
 // Map of icon components to their display names
-const techNameMap: Record<string, string> = {
+const techNameMap = {
   SiReact: "React.js",
   SiNextdotjs: "Next.js",
   SiTypescript: "TypeScript",
@@ -55,34 +55,21 @@ export default function TechIconTooltip({
 }: TechIconTooltipProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Extract the tech name using a more reliable method
+  // Get the tech name using a data attribute
   const getTechName = () => {
-    // Try to get the name from the function's displayName or name
-    const iconDisplayName = Icon.name;
-
-    // Check if we have a direct match in our map
-    if (techNameMap[iconDisplayName]) {
-      return techNameMap[iconDisplayName];
-    }
-
-    // If no direct match, try to find a partial match
-    // This is useful for minified code in production where names might be mangled
-    for (const key of Object.keys(techNameMap)) {
-      if (iconDisplayName.includes(key)) {
-        return techNameMap[key];
-      }
-    }
-
-    // Fallback: check the toString representation for known patterns
+    // Use a more reliable approach for production
+    // Convert the icon function to a string and extract the name
     const iconString = Icon.toString();
+
+    // Check each key in our map to see if it appears in the icon string
     for (const key of Object.keys(techNameMap)) {
       if (iconString.includes(key)) {
-        return techNameMap[key];
+        return techNameMap[key as keyof typeof techNameMap];
       }
     }
 
-    // Last resort: return a cleaned version of the name or a default
-    return iconDisplayName.replace(/^(Si|Fa)/, "") || "Technology";
+    // Fallback
+    return "Technology";
   };
 
   const techName = getTechName();
