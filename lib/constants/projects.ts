@@ -205,8 +205,9 @@ export const projects = [
     description:
       "The same To-Do application deployed through AWS Lambda functions.",
     image: "/todo.png",
-    github: "#",
-    demo: "#",
+    github:
+      "https://github.com/users/dallasfoley/packages/container/package/todo-app",
+    demo: "https://todo135.twilightparadox.com/",
     stack: [
       { Icon: SiTypescript, name: techNameMap.SiTypescript },
       { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
