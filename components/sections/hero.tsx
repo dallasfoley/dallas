@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { TypewriterEffectSmooth } from "./ui-effects/typewriter-effect";
+import { TypewriterEffectSmooth } from "../ui-effects/typewriter-effect";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 export default function Hero() {

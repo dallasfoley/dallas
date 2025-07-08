@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,8 +35,22 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link href="#home" className="text-2xl font-bold">
-          Dallas Foley<span className="text-primary">.</span>
+        <Link
+          href="/"
+          className="flex items-center text-2xl font-bold group tracking-tight"
+        >
+          <div className="flex items-baseline">
+            <Image
+              src="/favicon.ico"
+              alt="Logo"
+              width={32}
+              height={32}
+              className="transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-lg"
+            />
+          </div>
+          <span className="tracking-normal translate-y-[4px] bg-gradient-to-r from-red-600 via-yellow-500 to-pink-500 bg-clip-text text-transparent transition-all duration-500 group-hover:from-cyan-300 group-hover:via-blue-400 group-hover:to-purple-500">
+            allas Foley
+          </span>
         </Link>
 
         {/* Desktop Navigation */}

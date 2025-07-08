@@ -3,10 +3,10 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import TextReveal from "@/components/ui-effects/text-reveal";
-import Keyboard from "./skill-keyboard";
-import HoverVideoTooltip from "./hover-video-tooltip";
-import Flow from "./ui/flowchart";
-import { SparklesCore } from "./ui/sparkles";
+import Keyboard from "../skill-keyboard";
+import HoverVideoTooltip from "../hover-video-tooltip";
+import Flow from "../ui/flowchart";
+import { SparklesCore } from "../ui/sparkles";
 
 export default function About() {
   const ref = useRef(null);

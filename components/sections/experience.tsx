@@ -7,7 +7,7 @@ import { Briefcase, GraduationCap } from "lucide-react";
 import type { Education, WorkExperience } from "@/lib/types";
 import { Meteors } from "@/components/ui/meteors";
 import { cn } from "@/lib/utils";
-import { Cover } from "./ui/cover";
+import { Cover } from "../ui/cover";
 
 interface TimelineItemProps {
   item: WorkExperience | Education;

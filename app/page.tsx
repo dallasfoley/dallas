@@ -1,9 +1,9 @@
-import Hero from "@/components/hero";
-import About from "@/components/about";
-import Projects from "@/components/projects";
-import Experience from "@/components/experience";
-import Contact from "@/components/contact";
-import Navbar from "@/components/navbar";
+import Hero from "@/components/sections/hero";
+import About from "@/components/sections/about";
+import Projects from "@/components/sections/projects";
+import Experience from "@/components/sections/experience";
+import Contact from "@/components/sections/contact";
+import Navbar from "@/components/sections/navbar";
 import Background3D from "@/components/ui-effects/background-3D";
 
 export default function Home() {

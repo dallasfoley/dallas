@@ -1,15 +1,16 @@
 import type { IconType } from "react-icons/lib";
 import {
+  SiAmazonec2,
+  SiAmazonrds,
   SiAwslambda,
   SiClerk,
   SiCmake,
   SiCplusplus,
   SiCss3,
-  SiDigitalocean,
   SiDocker,
   SiDrizzle,
   SiExpress,
-  SiLinux,
+  SiMysql,
   SiNextdotjs,
   SiNginx,
   SiNodedotjs,
@@ -19,8 +20,8 @@ import {
   SiPython,
   SiReact,
   SiReacthookform,
-  SiReactquery,
   SiShadcnui,
+  //SiSpringboot,
   SiTailwindcss,
   SiThreedotjs,
   SiTwilio,
@@ -29,8 +30,10 @@ import {
   SiXml,
   SiZod,
 } from "react-icons/si";
+import { FaJava } from "react-icons/fa6";
 import { FaAws } from "react-icons/fa";
 import { techNameMap } from "./tech-names";
+import { JavalinIcon } from "@/components/javalin-con";
 
 // Helper type for tech stack items
 type TechStackItem = {
@@ -52,26 +55,23 @@ export const projects = [
     stack: [
       { Icon: SiTypescript, name: techNameMap.SiTypescript },
       { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
-      { Icon: SiReactquery, name: techNameMap.SiReactquery },
+      { Icon: SiPostgresql, name: techNameMap.SiPostgresql },
+      { Icon: SiDrizzle, name: techNameMap.SiDrizzle },
       { Icon: SiZod, name: techNameMap.SiZod },
       { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
       { Icon: SiShadcnui, name: techNameMap.SiShadcnui },
-      { Icon: SiPostgresql, name: techNameMap.SiPostgresql },
-      { Icon: SiDrizzle, name: techNameMap.SiDrizzle },
     ],
     fullstack: [
       { Icon: SiTypescript, name: techNameMap.SiTypescript },
       { Icon: SiReact, name: techNameMap.SiReact },
       { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
-      { Icon: SiReactquery, name: techNameMap.SiReactquery },
+      { Icon: SiPostgresql, name: techNameMap.SiPostgresql },
+      { Icon: SiDrizzle, name: techNameMap.SiDrizzle },
       { Icon: SiZod, name: techNameMap.SiZod },
       { Icon: SiReacthookform, name: techNameMap.SiReacthookform },
       { Icon: SiCss3, name: techNameMap.SiCss3 },
       { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
       { Icon: SiShadcnui, name: techNameMap.SiShadcnui },
-      { Icon: SiPostgresql, name: techNameMap.SiPostgresql },
-      { Icon: SiDrizzle, name: techNameMap.SiDrizzle },
-      { Icon: SiLinux, name: techNameMap.SiLinux },
       { Icon: SiTwilio, name: techNameMap.SiTwilio },
       { Icon: SiClerk, name: techNameMap.SiClerk },
       { Icon: SiVercel, name: techNameMap.SiVercel },
@@ -85,33 +85,14 @@ export const projects = [
       "An app where users can find, save and edit recipes. Allows search by name, ingredient list or AI Chatbot.",
     image: "/recipe-finder.png",
     github: "https://github.com/dallasfoley/recipe-finder",
-    demo: "https://recipe-finder-peach.vercel.app/",
+    demo: "https://recipe-finder-peach.vercel.app",
     stack: [
       { Icon: SiTypescript, name: techNameMap.SiTypescript },
       { Icon: SiReact, name: techNameMap.SiReact },
       { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
-      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
       { Icon: SiPostgresql, name: techNameMap.SiPostgresql },
       { Icon: SiPrisma, name: techNameMap.SiPrisma },
-      { Icon: SiVercel, name: techNameMap.SiVercel },
-    ],
-  },
-  {
-    title: "Personal Porfolio",
-    category: "Frontend-Centric",
-    description: "An exercise in UI builing",
-    longDescription:
-      "This gorgeous display of my work, experience, skills, characteristics, etc.",
-    image: "/portfolio.png",
-    github: "https://github.com/dallasfoley/dallas",
-    demo: "#",
-    stack: [
-      { Icon: SiTypescript, name: techNameMap.SiTypescript },
-      { Icon: SiReact, name: techNameMap.SiReact },
-      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
       { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
-      { Icon: SiShadcnui, name: techNameMap.SiShadcnui },
-      { Icon: SiThreedotjs, name: techNameMap.SiThreedotjs },
       { Icon: SiVercel, name: techNameMap.SiVercel },
     ],
   },
@@ -123,15 +104,127 @@ export const projects = [
     github: "https://github.com/dallasfoley/Pokedol",
     demo: "https://pokedol.vercel.app/",
     stack: [
-      { Icon: SiTypescript, name: techNameMap.SiTypescript },
-      { Icon: SiCss3, name: techNameMap.SiCss3 },
-      { Icon: SiReact, name: techNameMap.SiReact },
       { Icon: SiNodedotjs, name: techNameMap.SiNodedotjs },
       { Icon: SiExpress, name: techNameMap.SiExpress },
       { Icon: SiPostgresql, name: techNameMap.SiPostgresql },
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiCss3, name: techNameMap.SiCss3 },
+      { Icon: SiReact, name: techNameMap.SiReact },
       { Icon: SiVercel, name: techNameMap.SiVercel },
     ],
   },
+  {
+    title: "Personal Porfolio",
+    category: "Frontend-Centric",
+    description: "An exercise in UI builing.",
+    longDescription:
+      "This gorgeous and performant display of my work, experience, skills, characteristics, etc.",
+    image: "/portfolio.png",
+    github: "https://github.com/dallasfoley/dallas",
+    demo: "/",
+    stack: [
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiReact, name: techNameMap.SiReact },
+      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
+      { Icon: SiShadcnui, name: techNameMap.SiShadcnui },
+      { Icon: SiThreedotjs, name: techNameMap.SiThreedotjs },
+      { Icon: SiVercel, name: techNameMap.SiVercel },
+    ],
+  },
+  {
+    title: "Reading Progress Tracker Frontend",
+    category: "Frontend-Centric",
+    description:
+      "The frontend for a fullstack reading progress tracker application, manages JWTs manually, with a Javalin server, for session management.",
+    image: "/reading-tracker.png",
+    github: "https://github.com/dallasfoley/progress-tracker-frontend",
+    demo: "https://progress-tracker-frontend-jade.vercel.app",
+    stack: [
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
+      { Icon: SiMysql, name: techNameMap.SiMysql },
+      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
+      { Icon: SiZod, name: techNameMap.SiZod },
+      { Icon: SiShadcnui, name: techNameMap.SiShadcnui },
+      { Icon: SiReacthookform, name: techNameMap.SiReacthookform },
+      { Icon: SiVercel, name: techNameMap.SiVercel },
+    ],
+  },
+  {
+    title: "Calculadora",
+    category: "Frontend-Centric",
+    description: "A calulator.",
+    image: "/calc.png",
+    github: "https://github.com/dallasfoley/Calculator",
+    demo: "https://calculadora-nine-pi.vercel.app",
+    stack: [
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiCss3, name: techNameMap.SiCss3 },
+      { Icon: SiReact, name: techNameMap.SiReact },
+      { Icon: SiVercel, name: techNameMap.SiVercel },
+    ],
+  },
+  // {
+  //   title: "Todo App Frontend",
+  //   category: "Frontend-Centric",
+  //   description: "The React frontend for a fullstack todo-app.",
+  //   image: "/todo.png",
+  //   github: "https://github.com/dallasfoley/spring-boot-todo-frontend",
+  //   demo: "",
+  //   stack: [
+  //     { Icon: SiTypescript, name: techNameMap.SiTypescript },
+  //     { Icon: SiReact, name: techNameMap.SiReact },
+  //     { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
+
+  //     { Icon: SiZod, name: techNameMap.SiZod },
+  //     { Icon: SiShadcnui, name: techNameMap.SiShadcnui },
+
+  //     { Icon: SiReacthookform, name: techNameMap.SiReacthookform },
+  //     { Icon: SiVercel, name: techNameMap.SiVercel },
+  //   ],
+  // },
+  {
+    title: "Reading Progress Tracker Backend",
+    category: "Backend-Centric",
+    description:
+      "The Javalin backend for a reading progress tracker application.",
+    longDescription:
+      "The Javalin backend for a reading progress tracker application, manages JWTs manually, with a Javalin server, for session management. Built with Java, Javalin and MySQL through AWS RDS, deployed on an AWS EC2 instance through a Docker container with an NGINX reverse proxy.",
+    image: "/reading-tracker.png",
+    github: "https://github.com/dallasfoley/progress-tracker-backend",
+    package:
+      "https://github.com/users/dallasfoley/packages/container/package/progress-tracker-backend",
+    stack: [
+      { Icon: FaJava, name: techNameMap.FaJava },
+      {
+        Icon: JavalinIcon,
+        name: techNameMap.JavalinIcon,
+      },
+      { Icon: SiMysql, name: techNameMap.SiMysql },
+      { Icon: FaAws, name: techNameMap.FaAws },
+      { Icon: SiDocker, name: techNameMap.SiDocker },
+      { Icon: SiNginx, name: techNameMap.SiNginx },
+    ],
+  },
+  // {
+  //   title: "Todo App Backend",
+  //   category: "Backend-Centric",
+  //   description: "The Spring Boot backend for a todo application.",
+  //   longDescription:
+  //     "The Spring Boot backend for a todo application. Created with Java, Spring Boot and PostgreSQL through Neon DB. Manages JWTs manually for session management. Deployed on an AWS EC2 instance through a Docker container with an NGINX reverse proxy.",
+  //   image: "/todo.png",
+  //   github: "https://github.com/dallasfoley/spring-boot-todo-frontend",
+  //   package:
+  //     "https://github.com/users/dallasfoley/packages/container/package/progress-tracker-backend",
+  //   stack: [
+  //     { Icon: FaJava, name: techNameMap.FaJava },
+  //     { Icon: SiSpringboot, name: techNameMap.SiSpringboot },
+  //     { Icon: SiPostgresql, name: techNameMap.SiPostgresql },
+  //     { Icon: FaAws, name: techNameMap.FaAws },
+  //     { Icon: SiDocker, name: techNameMap.SiDocker },
+  //     { Icon: SiNginx, name: techNameMap.SiNginx },
+  //   ],
+  // },
   {
     title: "DIY Auth",
     category: "Backend-Centric",
@@ -142,79 +235,63 @@ export const projects = [
     demo: "https://auth-git-master-dallas-foleys-projects.vercel.app/login",
     stack: [
       { Icon: SiTypescript, name: techNameMap.SiTypescript },
-      { Icon: SiReact, name: techNameMap.SiReact },
       { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
       { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
       { Icon: SiVercel, name: techNameMap.SiVercel },
     ],
   },
   {
-    title: "Calculator",
-    category: "Frontend-Centric",
-    description: "A calulator.",
-    image: "/calc.png",
-    github: "https://github.com/dallasfoley/Calculator",
-    demo: "https://calculadora-nine-pi.vercel.app/",
-    stack: [
-      { Icon: SiTypescript, name: techNameMap.SiTypescript },
-      { Icon: SiCss3, name: techNameMap.SiCss3 },
-      { Icon: SiReact, name: techNameMap.SiReact },
-      { Icon: SiVercel, name: techNameMap.SiVercel },
-    ],
-  },
-  {
-    title: "Auth",
+    title: "Reading Progress Tracker App (AWS)",
     category: "Devops-Centric",
     description:
-      "The same DIY auth app from the backend tab deployed with Docker, NGINX and the Github Container Repository on a DigitalOcean droplet.",
-    image: "/auth.png",
-    github:
-      "https://github.com/users/dallasfoley/packages/container/package/auth",
-    demo: "https://auth135.twilightparadox.com/login",
-    stack: [
-      { Icon: SiTypescript, name: techNameMap.SiTypescript },
-      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
-      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
-      { Icon: SiDocker, name: techNameMap.SiDocker },
-      { Icon: SiNginx, name: techNameMap.SiNginx },
-      { Icon: SiDigitalocean, name: techNameMap.SiDigitalocean },
-    ],
-  },
-  {
-    title: "To-Do App (AWS EC2)",
-    category: "Devops-Centric",
-    description:
-      "A simple To-Do application deployed with Docker, NGINX and the Github Container Repository on an AWS EC2 instance.",
-    image: "/todo.png",
+      "The Javalin backend is deployed to an AWS EC2 instance through a Docker container with an NGINX reverse proxy.",
+    longDescription:
+      "The Javalin backend is deployed to an AWS EC2 instance through a Docker container with an NGINX reverse proxy. It is the same EC2 instance and same NGINX reverse proxy used for the Spring Boot Todo App but a different backend on a different conatiner. The Next.js Backend-For-Frontend is deployed serverlessly to Vercel.",
+    image: "/reading-tracker.png",
     github:
       "https://github.com/users/dallasfoley/packages/container/package/todo-app",
-    demo: "https://todo135.twilightparadox.com/",
+    demo: "https://progress-tracker-frontend-jade.vercel.app",
     stack: [
-      { Icon: SiTypescript, name: techNameMap.SiTypescript },
-      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
-      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
-      { Icon: SiClerk, name: techNameMap.SiClerk },
-      { Icon: SiDocker, name: techNameMap.SiDocker },
-      { Icon: SiNginx, name: techNameMap.SiNginx },
       { Icon: FaAws, name: techNameMap.FaAws },
+      { Icon: SiAmazonec2, name: techNameMap.SiAmazonec2 },
+      { Icon: SiAmazonrds, name: techNameMap.SiAmazonrds },
+      { Icon: SiDocker, name: techNameMap.SiDocker },
+      { Icon: SiNginx, name: techNameMap.SiNginx },
+      { Icon: SiVercel, name: techNameMap.SiVercel },
     ],
   },
+  // {
+  //   title: "Todo App (AWS EC2)",
+  //   category: "Devops-Centric",
+  //   description:
+  //     "The Spring Boot backend is deployed to an AWS EC2 instance through a Docker container with an NGINX reverse proxy.",
+  //   longDescription:
+  //     "The Javalin backend is deployed to an AWS EC2 instance through a Docker container with an NGINX reverse proxy. It is the same EC2 instance and same NGINX reverse proxy used for the Javalin Reading Progress Tracker but a different backend on a different conatiner. The Next.js Backend-For-Frontend is deployed serverlessly to Vercel.",
+  //   image: "/todo.png",
+  //   github:
+  //     "https://github.com/users/dallasfoley/packages/container/package/todo-app",
+  //   demo: "https://todo135.twilightparadox.com/",
+  //   stack: [
+  //     { Icon: FaAws, name: techNameMap.FaAws },
+  //     { Icon: SiDocker, name: techNameMap.SiDocker },
+  //     { Icon: SiNginx, name: techNameMap.SiNginx },
+  //     { Icon: SiVercel, name: techNameMap.SiVercel },
+  //   ],
+  // },
   {
-    title: "To-Do App (AWS Lambda)",
+    title: "Todo App (AWS Lambda)",
     category: "Devops-Centric",
     description:
-      "The same To-Do application deployed through AWS Lambda functions.",
+      "The same Todo app deployed serverlessly through AWS Lambda functions.",
     image: "/todo.png",
-    github:
-      "https://github.com/users/dallasfoley/packages/container/package/todo-app",
-    demo: "https://todo135.twilightparadox.com/",
+    github: "https://github.com/dallasfoley/todo-app",
+    demo: "https://todo-app-135.site",
     stack: [
       { Icon: SiTypescript, name: techNameMap.SiTypescript },
       { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
       { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
+      { Icon: SiPostgresql, name: techNameMap.SiPostgresql },
       { Icon: SiClerk, name: techNameMap.SiClerk },
-      { Icon: SiDocker, name: techNameMap.SiDocker },
-      { Icon: SiNginx, name: techNameMap.SiNginx },
       { Icon: SiAwslambda, name: techNameMap.SiAwslambda },
     ],
   },
@@ -263,6 +340,7 @@ export type Project = {
   longDescription?: string;
   image: string;
   github: string;
+  package?: string;
   demo?: string;
   stack: TechStackItem[];
   fullstack?: TechStackItem[];

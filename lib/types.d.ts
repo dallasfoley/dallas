@@ -15,9 +15,16 @@ export interface Project {
   title: string;
   category: string;
   description: string;
+  longDescription?: string;
   image: string;
   github: string;
-  demo: string;
+  demo?: string;
+  stack: {
+    Icon: IconType;
+    name: string;
+  }[];
+  fullstack?: { Icon: IconType; name: string }[]; // Make this optional
+  package?: string;
 }
 
 export interface WorkExperience {
