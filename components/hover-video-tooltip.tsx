@@ -79,8 +79,10 @@ export default function HoverVideoTooltip({
             style={{ pointerEvents: "auto" }}
           >
             <video
-              autoPlay
+              preload="metadata"
+              muted
               loop
+              autoPlay
               className="w-full h-full object-cover"
               ref={(el) => {
                 if (el) {
@@ -101,7 +103,7 @@ export default function HoverVideoTooltip({
               }}
               style={{ pointerEvents: "auto" }}
             >
-              <source src={videoUrl} type="video/mp4" />
+              <source src={videoUrl} type="video/webm" />
               Your browser does not support the video tag.
             </video>
           </motion.div>

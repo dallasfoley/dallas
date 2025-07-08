@@ -83,7 +83,7 @@ export default function About() {
             TypeScript is practically mandatory for its ability to enhance code
             maintainability and scalability. It&apos;s 2025 and if you&apos;re
             still using vanilla JS,{" "}
-            <HoverVideoTooltip videoUrl="/videos/jordan-stop-it.mp4">
+            <HoverVideoTooltip videoUrl="/videos/jordan-stop-it.webm">
               in the words of the second greatest basketball player of all
               time...
             </HoverVideoTooltip>{" "}
