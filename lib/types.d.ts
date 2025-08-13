@@ -11,21 +11,20 @@ export interface Service {
   description: string;
 }
 
-export interface Project {
+export type Project = {
   title: string;
   category: string;
   description: string;
   longDescription?: string;
   image: string;
   github: string;
-  demo?: string;
-  stack: {
-    Icon: IconType;
-    name: string;
-  }[];
-  fullstack?: { Icon: IconType; name: string }[]; // Make this optional
   package?: string;
-}
+  demo?: string;
+  stack?: TechStackItem[];
+  fullstack?: TechStackItem[];
+  frontendStack?: TechStackItem[];
+  backendStack?: TechStackItem[];
+};
 
 export interface WorkExperience {
   title: string;

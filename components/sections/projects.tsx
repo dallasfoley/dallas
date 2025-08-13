@@ -8,7 +8,8 @@ import { ExternalLink } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import TextReveal from "@/components/ui-effects/text-reveal";
 import Image from "next/image";
-import { Project, projects } from "@/lib/constants/projects";
+import { projects } from "@/lib/constants/projects";
+import { Project } from "@/lib/types";
 import Link from "next/link";
 import { Highlight } from "../ui-effects/highlight";
 import TechIconTooltip from "../ui/tech-icon-tooltip";
@@ -16,7 +17,7 @@ import { useOutsideClick } from "@/hooks/use-outside-click";
 import ProjectsGrid from "../projects-grid";
 
 export default function Projects() {
-  const [activeFilter, setActiveFilter] = useState("Fullstack");
+  const [activeFilter, setActiveFilter] = useState("Web Apps");
   const [activeProject, setActiveProject] = useState<Project | null>(null);
   const ref = useRef<HTMLDivElement | null>(null);
   const id = useId();
@@ -69,7 +70,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Filter Buttons - Scrollable on mobile */}
-        {filteredProjects.length > 1 && (
+        {filteredProjects.length > 0 && (
           <ProjectsGrid
             filteredProjects={filteredProjects}
             activeFilter={activeFilter}
@@ -166,7 +167,7 @@ export default function Projects() {
                         </div>
                       ))}
                     {!activeProject.fullstack &&
-                      activeProject.stack.map((tech, key) => (
+                      activeProject.stack?.map((tech, key) => (
                         <div
                           className="mx-1 sm:mx-2 p-0 h-4 w-4 sm:h-5 sm:w-5"
                           key={key}
@@ -179,7 +180,7 @@ export default function Projects() {
                       ))}
 
                     {!activeProject.fullstack &&
-                      activeProject.stack.map((tech, key) => (
+                      activeProject.stack?.map((tech, key) => (
                         <div
                           className="mx-1 sm:mx-2 p-0 h-4 w-4 sm:h-5 sm:w-5"
                           key={key}

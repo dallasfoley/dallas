@@ -8,13 +8,7 @@ import { Project } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 
-const categories = [
-  "Fullstack",
-  "Frontend-Centric",
-  "Backend-Centric",
-  "Devops-Centric",
-  "Non-Web",
-];
+const categories = ["Web Apps", "Packages", "Non-Web"];
 
 export default function ProjectsGrid({
   filteredProjects,
@@ -132,7 +126,18 @@ export default function ProjectsGrid({
                       )}
                     </div>
                     <div className="flex items-center">
-                      {project.stack.map((tech, key) => (
+                      {project.stack?.map((tech, key) => (
+                        <div
+                          className="mx-1 sm:mx-2 p-0 h-4 w-4 sm:h-5 sm:w-5"
+                          key={key}
+                        >
+                          <TechIconTooltip
+                            Icon={tech.Icon}
+                            techName={tech.name}
+                          />
+                        </div>
+                      ))}
+                      {project.fullstack?.map((tech, key) => (
                         <div
                           className="mx-1 sm:mx-2 p-0 h-4 w-4 sm:h-5 sm:w-5"
                           key={key}

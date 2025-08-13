@@ -21,7 +21,6 @@ import {
   SiReact,
   SiReacthookform,
   SiShadcnui,
-  //SiSpringboot,
   SiTailwindcss,
   SiThreedotjs,
   SiTwilio,
@@ -43,8 +42,23 @@ type TechStackItem = {
 
 export const projects = [
   {
+    title: "next-jwt-refresh",
+    category: "Packages",
+    description:
+      "This repository demonstrates a comprehensive solution for handling JWT token refresh in Next.js applications using Server Actions and the App Router.",
+    longDescription:
+      "This repository demonstrates a comprehensive solution for handling JWT token refresh in Next.js applications using Server Actions and the App Router. This package works the same in either case: if you're using a separate backend or Next.js as your backend.",
+    image: "/jwt.png",
+    github: "https://github.com/dallasfoley/next-jwt-refresh",
+    demo: "https://www.npmjs.com/package/next-jwt-refresh",
+    stack: [
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
+    ],
+  },
+  {
     title: "LightMind",
-    category: "Fullstack",
+    category: "Web Apps",
     description:
       "A mental health tracker allowing users to track and visualize their feelings over time, journal, set reminders, etc.",
     longDescription:
@@ -78,8 +92,43 @@ export const projects = [
     ],
   },
   {
+    title: "Reading Progress Tracker Frontend",
+    category: "Web Apps",
+    description: "A fullstack reading progress tracker application.",
+    longdescription:
+      "A fullstack reading progress tracker application. Built with Java, Javalin and MySQL through AWS RDS, deployed on an AWS EC2 instance through a Docker container with an NGINX reverse proxy.",
+    image: "/reading-tracker.png",
+    github: "https://github.com/dallasfoley/progress-tracker-frontend",
+    package:
+      "https://github.com/users/dallasfoley/packages/container/package/progress-tracker-backend",
+    demo: "https://progress-tracker-frontend-jade.vercel.app",
+    frontendStack: [
+      { Icon: SiTypescript, name: techNameMap.SiTypescript },
+      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
+      { Icon: SiMysql, name: techNameMap.SiMysql },
+      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
+      { Icon: SiZod, name: techNameMap.SiZod },
+      { Icon: SiShadcnui, name: techNameMap.SiShadcnui },
+      { Icon: SiReacthookform, name: techNameMap.SiReacthookform },
+      { Icon: SiVercel, name: techNameMap.SiVercel },
+    ],
+    backendStack: [
+      { Icon: FaJava, name: techNameMap.FaJava },
+      {
+        Icon: JavalinIcon,
+        name: techNameMap.JavalinIcon,
+      },
+      { Icon: SiMysql, name: techNameMap.SiMysql },
+      { Icon: FaAws, name: techNameMap.FaAws },
+      { Icon: SiAmazonec2, name: techNameMap.SiAmazonec2 },
+      { Icon: SiAmazonrds, name: techNameMap.SiAmazonrds },
+      { Icon: SiDocker, name: techNameMap.SiDocker },
+      { Icon: SiNginx, name: techNameMap.SiNginx },
+    ],
+  },
+  {
     title: "Recipe Finder",
-    category: "Fullstack",
+    category: "Web Apps",
     description: "An app where users can find, save and edit recipes.",
     longDescription:
       "An app where users can find, save and edit recipes. Allows search by name, ingredient list or AI Chatbot.",
@@ -98,7 +147,7 @@ export const projects = [
   },
   {
     title: "Pokedol",
-    category: "Fullstack",
+    category: "Web Apps",
     description: "An app featuring various Pokemon themed games.",
     image: "/pokedol.png",
     github: "https://github.com/dallasfoley/Pokedol",
@@ -115,7 +164,7 @@ export const projects = [
   },
   {
     title: "Personal Porfolio",
-    category: "Frontend-Centric",
+    category: "Web Apps",
     description: "An exercise in UI builing.",
     longDescription:
       "This gorgeous and performant display of my work, experience, skills, characteristics, etc.",
@@ -131,46 +180,61 @@ export const projects = [
       { Icon: SiVercel, name: techNameMap.SiVercel },
     ],
   },
-  {
-    title: "Reading Progress Tracker Frontend",
-    category: "Frontend-Centric",
-    description:
-      "The frontend for a fullstack reading progress tracker application, manages JWTs manually, with a Javalin server, for session management.",
-    image: "/reading-tracker.png",
-    github: "https://github.com/dallasfoley/progress-tracker-frontend",
-    demo: "https://progress-tracker-frontend-jade.vercel.app",
-    stack: [
-      { Icon: SiTypescript, name: techNameMap.SiTypescript },
-      { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
-      { Icon: SiMysql, name: techNameMap.SiMysql },
-      { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
-      { Icon: SiZod, name: techNameMap.SiZod },
-      { Icon: SiShadcnui, name: techNameMap.SiShadcnui },
-      { Icon: SiReacthookform, name: techNameMap.SiReacthookform },
-      { Icon: SiVercel, name: techNameMap.SiVercel },
-    ],
-  },
-  {
-    title: "Calculadora",
-    category: "Frontend-Centric",
-    description: "A calulator.",
-    image: "/calc.png",
-    github: "https://github.com/dallasfoley/Calculator",
-    demo: "https://calculadora-nine-pi.vercel.app",
-    stack: [
-      { Icon: SiTypescript, name: techNameMap.SiTypescript },
-      { Icon: SiCss3, name: techNameMap.SiCss3 },
-      { Icon: SiReact, name: techNameMap.SiReact },
-      { Icon: SiVercel, name: techNameMap.SiVercel },
-    ],
-  },
+  // {
+  //   title: "Reading Progress Tracker Frontend",
+  //   category: "Web Apps",
+  //   description:
+  //     "The frontend for a fullstack reading progress tracker application, manages JWTs manually, with a Javalin server, for session management.",
+  //   longdescription:
+  //     "The Javalin backend for a reading progress tracker application, manages JWTs manually, with a Javalin server, for session management. Built with Java, Javalin and MySQL through AWS RDS, deployed on an AWS EC2 instance through a Docker container with an NGINX reverse proxy.",
+  //   image: "/reading-tracker.png",
+  //   github: "https://github.com/dallasfoley/progress-tracker-frontend",
+  //   demo: "https://progress-tracker-frontend-jade.vercel.app",
+  //   frontendStack: [
+  //     { Icon: SiTypescript, name: techNameMap.SiTypescript },
+  //     { Icon: SiNextdotjs, name: techNameMap.SiNextdotjs },
+  //     { Icon: SiMysql, name: techNameMap.SiMysql },
+  //     { Icon: SiTailwindcss, name: techNameMap.SiTailwindcss },
+  //     { Icon: SiZod, name: techNameMap.SiZod },
+  //     { Icon: SiShadcnui, name: techNameMap.SiShadcnui },
+  //     { Icon: SiReacthookform, name: techNameMap.SiReacthookform },
+  //     { Icon: SiVercel, name: techNameMap.SiVercel },
+  //   ],
+  //   backendStack: [
+  //     { Icon: FaJava, name: techNameMap.FaJava },
+  //     {
+  //       Icon: JavalinIcon,
+  //       name: techNameMap.JavalinIcon,
+  //     },
+  //     { Icon: SiMysql, name: techNameMap.SiMysql },
+  //     { Icon: FaAws, name: techNameMap.FaAws },
+  //     { Icon: SiAmazonec2, name: techNameMap.SiAmazonec2 },
+  //     { Icon: SiAmazonrds, name: techNameMap.SiAmazonrds },
+  //     { Icon: SiDocker, name: techNameMap.SiDocker },
+  //     { Icon: SiNginx, name: techNameMap.SiNginx },
+  //   ],
+  // },
+  // {
+  //   title: "Calculadora",
+  //   category: "Frontend-Centric",
+  //   description: "A calulator.",
+  //   image: "/calc.png",
+  //   github: "https://github.com/dallasfoley/Calculator",
+  //   demo: "https://calculadora-nine-pi.vercel.app",
+  //   stack: [
+  //     { Icon: SiTypescript, name: techNameMap.SiTypescript },
+  //     { Icon: SiCss3, name: techNameMap.SiCss3 },
+  //     { Icon: SiReact, name: techNameMap.SiReact },
+  //     { Icon: SiVercel, name: techNameMap.SiVercel },
+  //   ],
+  // },
   // {
   //   title: "Todo App Frontend",
   //   category: "Frontend-Centric",
   //   description: "The React frontend for a fullstack todo-app.",
   //   image: "/todo.png",
   //   github: "https://github.com/dallasfoley/spring-boot-todo-frontend",
-  //   demo: "",
+  //   demo: "https://sb-todo-app.vercel.app/",
   //   stack: [
   //     { Icon: SiTypescript, name: techNameMap.SiTypescript },
   //     { Icon: SiReact, name: techNameMap.SiReact },
@@ -183,29 +247,28 @@ export const projects = [
   //     { Icon: SiVercel, name: techNameMap.SiVercel },
   //   ],
   // },
-  {
-    title: "Reading Progress Tracker Backend",
-    category: "Backend-Centric",
-    description:
-      "The Javalin backend for a reading progress tracker application.",
-    longDescription:
-      "The Javalin backend for a reading progress tracker application, manages JWTs manually, with a Javalin server, for session management. Built with Java, Javalin and MySQL through AWS RDS, deployed on an AWS EC2 instance through a Docker container with an NGINX reverse proxy.",
-    image: "/reading-tracker.png",
-    github: "https://github.com/dallasfoley/progress-tracker-backend",
-    package:
-      "https://github.com/users/dallasfoley/packages/container/package/progress-tracker-backend",
-    stack: [
-      { Icon: FaJava, name: techNameMap.FaJava },
-      {
-        Icon: JavalinIcon,
-        name: techNameMap.JavalinIcon,
-      },
-      { Icon: SiMysql, name: techNameMap.SiMysql },
-      { Icon: FaAws, name: techNameMap.FaAws },
-      { Icon: SiDocker, name: techNameMap.SiDocker },
-      { Icon: SiNginx, name: techNameMap.SiNginx },
-    ],
-  },
+  // {
+  //   title: "Reading Progress Tracker Backend",
+  //   category: "Backend-Centric",
+  //   description:
+  //     "The Javalin backend for a reading progress tracker application.",
+  //   longDescription:
+  //     "The Javalin backend for a reading progress tracker application, manages JWTs manually, with a Javalin server, for session management. Built with Java, Javalin and MySQL through AWS RDS, deployed on an AWS EC2 instance through a Docker container with an NGINX reverse proxy.",
+  //   image: "/reading-tracker.png",
+  //   github: "https://github.com/dallasfoley/progress-tracker-backend",
+  //   demo: "https://progress-tracker-frontend-jade.vercel.app",
+  //   stack: [
+  //     { Icon: FaJava, name: techNameMap.FaJava },
+  //     {
+  //       Icon: JavalinIcon,
+  //       name: techNameMap.JavalinIcon,
+  //     },
+  //     { Icon: SiMysql, name: techNameMap.SiMysql },
+  //     { Icon: FaAws, name: techNameMap.FaAws },
+  //     { Icon: SiDocker, name: techNameMap.SiDocker },
+  //     { Icon: SiNginx, name: techNameMap.SiNginx },
+  //   ],
+  // },
   // {
   //   title: "Todo App Backend",
   //   category: "Backend-Centric",
@@ -213,9 +276,8 @@ export const projects = [
   //   longDescription:
   //     "The Spring Boot backend for a todo application. Created with Java, Spring Boot and PostgreSQL through Neon DB. Manages JWTs manually for session management. Deployed on an AWS EC2 instance through a Docker container with an NGINX reverse proxy.",
   //   image: "/todo.png",
-  //   github: "https://github.com/dallasfoley/spring-boot-todo-frontend",
-  //   package:
-  //     "https://github.com/users/dallasfoley/packages/container/package/progress-tracker-backend",
+  //   github: "https://github.com/dallasfoley/spring-boot-todo-backend",
+  //   demo: "https://sb-todo-app.vercel.app/",
   //   stack: [
   //     { Icon: FaJava, name: techNameMap.FaJava },
   //     { Icon: SiSpringboot, name: techNameMap.SiSpringboot },
@@ -240,37 +302,37 @@ export const projects = [
       { Icon: SiVercel, name: techNameMap.SiVercel },
     ],
   },
-  {
-    title: "Reading Progress Tracker App (AWS)",
-    category: "Devops-Centric",
-    description:
-      "The Javalin backend is deployed to an AWS EC2 instance through a Docker container with an NGINX reverse proxy.",
-    longDescription:
-      "The Javalin backend is deployed to an AWS EC2 instance through a Docker container with an NGINX reverse proxy. It is the same EC2 instance and same NGINX reverse proxy used for the Spring Boot Todo App but a different backend on a different conatiner. The Next.js Backend-For-Frontend is deployed serverlessly to Vercel.",
-    image: "/reading-tracker.png",
-    github:
-      "https://github.com/users/dallasfoley/packages/container/package/todo-app",
-    demo: "https://progress-tracker-frontend-jade.vercel.app",
-    stack: [
-      { Icon: FaAws, name: techNameMap.FaAws },
-      { Icon: SiAmazonec2, name: techNameMap.SiAmazonec2 },
-      { Icon: SiAmazonrds, name: techNameMap.SiAmazonrds },
-      { Icon: SiDocker, name: techNameMap.SiDocker },
-      { Icon: SiNginx, name: techNameMap.SiNginx },
-      { Icon: SiVercel, name: techNameMap.SiVercel },
-    ],
-  },
+  // {
+  //   title: "Reading Progress Tracker App (AWS)",
+  //   category: "Devops-Centric",
+  //   description:
+  //     "The Javalin backend is deployed to an AWS EC2 instance through a Docker container with an NGINX reverse proxy.",
+  //   longDescription:
+  //     "The Javalin backend is deployed to an AWS EC2 instance through a Docker container with an NGINX reverse proxy. It is the same EC2 instance and same NGINX reverse proxy used for the Spring Boot Todo App but a different backend on a different conatiner. The Next.js Backend-For-Frontend is deployed serverlessly to Vercel.",
+  //   image: "/reading-tracker.png",
+  //   github:
+  //     "https://github.com/users/dallasfoley/packages/container/package/progress-tracker-backend",
+  //   demo: "https://progress-tracker-frontend-jade.vercel.app",
+  //   stack: [
+  //     { Icon: FaAws, name: techNameMap.FaAws },
+  //     { Icon: SiAmazonec2, name: techNameMap.SiAmazonec2 },
+  //     { Icon: SiAmazonrds, name: techNameMap.SiAmazonrds },
+  //     { Icon: SiDocker, name: techNameMap.SiDocker },
+  //     { Icon: SiNginx, name: techNameMap.SiNginx },
+  //     { Icon: SiVercel, name: techNameMap.SiVercel },
+  //   ],
+  // },
   // {
   //   title: "Todo App (AWS EC2)",
   //   category: "Devops-Centric",
   //   description:
   //     "The Spring Boot backend is deployed to an AWS EC2 instance through a Docker container with an NGINX reverse proxy.",
   //   longDescription:
-  //     "The Javalin backend is deployed to an AWS EC2 instance through a Docker container with an NGINX reverse proxy. It is the same EC2 instance and same NGINX reverse proxy used for the Javalin Reading Progress Tracker but a different backend on a different conatiner. The Next.js Backend-For-Frontend is deployed serverlessly to Vercel.",
+  //     "The Spring Boot backend is deployed to an AWS EC2 instance through a Docker container with an NGINX reverse proxy. It is the same EC2 instance and same NGINX reverse proxy used for the Javalin Reading Progress Tracker but a different backend on a different conatiner. The Next.js Backend-For-Frontend is deployed serverlessly to Vercel.",
   //   image: "/todo.png",
   //   github:
-  //     "https://github.com/users/dallasfoley/packages/container/package/todo-app",
-  //   demo: "https://todo135.twilightparadox.com/",
+  //     "https://github.com/users/dallasfoley/packages/container/package/sb-todo-app",
+  //   demo: "https://sb-todo-app.vercel.app/",
   //   stack: [
   //     { Icon: FaAws, name: techNameMap.FaAws },
   //     { Icon: SiDocker, name: techNameMap.SiDocker },
@@ -344,4 +406,6 @@ export type Project = {
   demo?: string;
   stack: TechStackItem[];
   fullstack?: TechStackItem[];
+  frontendStack?: TechStackItem[];
+  backendStack?: TechStackItem[];
 };
